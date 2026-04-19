@@ -1,0 +1,39 @@
+# Les intervalles sont en secondes.
+
+interval: 300 # 300 secondes = 5 minutes
+
+warnings:
+  - 30
+  - 10
+  - 5
+  - 3
+  - 2
+  - 1
+
+item-blacklist: []
+# Si aucun item n'est à blacklisté, laissez tel quel,
+# sinon commentez cette ligne et décommentez les lignes suivantes en
+# ajoutant les items que vous souhaitez blacklisté (ex: DIAMOND, EMERALD, etc.)
+
+# item-blacklist:
+#   - DIAMOND
+#   - EMERALD
+
+messages:
+  prefix: "&6&lClearLag &8» "
+
+  warning: "&c⚠ Les entités au sol seront supprimées dans &e{time}"
+  cleared: "&a{items} items supprimés &7({entities} entités)"
+
+  reload: "&aConfig rechargée et timer réinitialisé !"
+  no-permission: "&cTu n'as pas la permission !"
+  usage: "&cUsage: /clearlag <reload|time>"
+  time: "&eProchain clearlag dans &c{time}"
+
+# You can create your own webhook with an embed creator and
+# you must use the {items} and {entities} placeholders in the
+# description of the embed to display the number of items and entities removed.
+# https://message.style/app/editor
+webhook:
+  enabled: true
+  url: "https://discord.com/api/webhooks/CHANGE_MOI"

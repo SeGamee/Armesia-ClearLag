@@ -1,0 +1,21 @@
+{
+  "embeds": [
+    {
+      "title": "🧹 ClearLag",
+      "description": "Nettoyage effectué",
+      "color": 16753920,
+      "fields": [
+        {
+          "name": "Items supprimés",
+          "value": "{items}",
+          "inline": true
+        },
+        {
+          "name": "Entités supprimées",
+          "value": "{entities}",
+          "inline": true
+        }
+      ]
+    }
+  ]
+}
