@@ -18,6 +18,19 @@ public class ClearTask {
         this.timer = plugin.getConfigManager().getInterval();
     }
 
+    /**
+     * Effectue un clear lag instantané et envoie le message de broadcast.
+     */
+    public void clearNow() {
+        ConfigManager cfg = plugin.getConfigManager();
+        String prefix = cfg.format(cfg.getPrefix());
+        ClearResult result = clearEntities();
+        String msg = cfg.getMessage("cleared")
+                .replace("{items}", String.valueOf(result.items()))
+                .replace("{entities}", String.valueOf(result.entities()));
+        Bukkit.broadcastMessage(prefix + cfg.format(msg));
+    }
+
     public void start() {
         task = new BukkitRunnable() {
             @Override

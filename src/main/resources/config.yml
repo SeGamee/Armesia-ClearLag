@@ -27,7 +27,7 @@ messages:
 
   reload: "&aConfig rechargée et timer réinitialisé !"
   no-permission: "&cTu n'as pas la permission !"
-  usage: "&cUsage: /clearlag <reload|time>"
+  usage: "&cUsage: /clearlag <reload|time|clear>"
   time: "&eProchain clearlag dans &c{time}"
 
 # You can create your own webhook with an embed creator and

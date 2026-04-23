@@ -20,6 +20,7 @@ public class CommandClearLag implements CommandExecutor {
 
         boolean canReload = sender.hasPermission("armesia.clearlag.reload");
         boolean canTime = sender.hasPermission("armesia.clearlag.time");
+        boolean canClear = sender.hasPermission("armesia.clearlag.clear");
 
         // /clearlag
         if (args.length == 0) {
@@ -42,6 +43,19 @@ public class CommandClearLag implements CommandExecutor {
             sender.sendMessage(prefix + cfg.format(cfg.getMessage("no-permission")));
             return true;
         }
+
+        // /clearlag clear
+        if (args[0].equalsIgnoreCase("clear")) {
+            if (!canClear) {
+                sender.sendMessage(prefix + cfg.format(cfg.getMessage("no-permission")));
+                return true;
+            }
+
+            plugin.getClearTask().clearNow();
+            sender.sendMessage(prefix + "§aClearLag manuel effectué !");
+            return true;
+        }
+
 
         // /clearlag reload
         if (args[0].equalsIgnoreCase("reload")) {
